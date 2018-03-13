@@ -1,5 +1,6 @@
 package cn.example.life.sharding.controller;
 
+import cn.example.life.core.utils.IdUtil;
 import cn.example.life.sharding.module.Order;
 import cn.example.life.sharding.repository.OrderRepository;
 import cn.example.life.sharding.service.OrderService;
@@ -21,24 +22,21 @@ public class OrderController {
     @Autowired
     private OrderService orderService;
 
+    @Autowired
+    private IdUtil idUtil;
+
     @RequestMapping("add")
     public Object add() {
-//        for (int i = 0; i < 100; i++) {
-//            Order order = new Order();
-//            order.setUserId(new IdUtil(0, 0).nextId());
-//            order.setOrderId(new IdUtil(0, 0).nextId());
-//            orderRepository.save(order);
-//        }
-        for (int i = 0; i < 10; i++) {
+        for (int i = 0; i < 20; i++) {
             Order order = new Order();
-            order.setUserId((long) i);
-            order.setOrderId((long) i);
+            order.setUserId(idUtil.nextId());
+            order.setOrderId(idUtil.nextId());
             orderRepository.save(order);
         }
-        for (int i = 10; i < 20; i++) {
+        for (int i = 0; i < 20; i++) {
             Order order = new Order();
-            order.setUserId((long) i + 1);
-            order.setOrderId((long) i);
+            order.setUserId(idUtil.nextId() + 1);
+            order.setOrderId(idUtil.nextId() + 1);
             orderRepository.save(order);
         }
         return "success";

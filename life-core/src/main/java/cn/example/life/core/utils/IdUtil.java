@@ -46,6 +46,11 @@ public class IdUtil {
     /** 上次生成ID的时间截 */
     private long lastTimestamp = -1L;
     //==============================Constructors=====================================
+
+    public IdUtil(){
+        this(2L,1L);
+    }
+
     /**
      * 构造函数
      * @param workerId 工作ID (0~31)
