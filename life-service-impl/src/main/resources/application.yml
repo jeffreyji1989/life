@@ -1,0 +1,12 @@
+spring:
+  application:
+    name: life-service
+server:
+  port: 8001
+eureka:
+  instance:
+    hostname: 127.0.0.1
+  client:
+    service-url:
+      default-zone: http://${eureka.instance.hostname}:8761/eureka/
+

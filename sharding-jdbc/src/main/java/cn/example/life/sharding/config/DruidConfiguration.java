@@ -10,7 +10,11 @@ import com.dangdang.ddframe.rdb.sharding.api.rule.TableRule;
 import com.dangdang.ddframe.rdb.sharding.api.strategy.database.DatabaseShardingStrategy;
 import com.dangdang.ddframe.rdb.sharding.api.strategy.table.TableShardingStrategy;
 import jdk.jfr.events.ThrowablesEvent;
+import lombok.Getter;
+import lombok.Setter;
 import org.apache.commons.lang3.StringUtils;
+import org.hibernate.validator.constraints.NotBlank;
+import org.hibernate.validator.constraints.NotEmpty;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.web.servlet.FilterRegistrationBean;
 import org.springframework.boot.web.servlet.ServletRegistrationBean;
@@ -20,6 +24,7 @@ import org.springframework.context.annotation.Primary;
 import org.springframework.util.CollectionUtils;
 
 import javax.sql.DataSource;
+import javax.validation.Valid;
 import java.sql.SQLException;
 import java.util.Arrays;
 import java.util.HashMap;
@@ -28,6 +33,8 @@ import java.util.Map;
 /**
  * Created by 季先生 on 2017/8/2 9:55.
  */
+@Getter
+@Setter
 @Configuration
 public class DruidConfiguration {
     @Value("${spring.datasource.url}")
@@ -70,10 +77,13 @@ public class DruidConfiguration {
     @Value("${spring.datasource.dbName}")
     private String dbName;
     @Value("${spring.datasource.dbs}")
+    @NotBlank(message = "数据库列表不能为null")
     private String dbs;
     @Value("${spring.datasource.tables}")
+    @NotEmpty(message = "数据库中表不能为null")
     private String tables;
     @Value("${spring.datasource.virtual.table.name}")
+    @NotEmpty(message = "虚拟表名字不能为null")
     private String virtualTableName;
 
     @Bean     //声明其为Bean实例

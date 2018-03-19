@@ -11,6 +11,10 @@
         <module>demo</module>
         <module>life-core</module>
         <module>life-common</module>
+        <module>eureka-server</module>
+        <module>life-service</module>
+        <module>life-service-impl</module>
+        <module>life-app</module>
     </modules>
     <packaging>pom</packaging>
 
@@ -22,10 +26,17 @@
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <java.version>1.8</java.version>
 
-        <springboot.version>2.0.0.RELEASE</springboot.version>
+        <springboot.version>1.5.9.RELEASE</springboot.version>
         <spring.platform.version>Brussels-SR7</spring.platform.version>
         <druid.version>1.1.9</druid.version>
     </properties>
+
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>1.5.9.RELEASE</version>
+        <relativePath/> <!-- lookup parent from repository -->
+    </parent>
 
     <dependencyManagement>
 
@@ -44,20 +55,34 @@
                 <version>${project.version}</version>
             </dependency>
 
+            <dependency>
+                <groupId>cn.example</groupId>
+                <artifactId>life-service</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+
             <!--spring统一版本控制-->
             <dependency>
                 <groupId>io.spring.platform</groupId>
                 <artifactId>platform-bom</artifactId>
-                <version>${spring.platform.version}</version>
+                <version>Brussels-SR7</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
 
-            <!--springboot 主版本引用-->
+            <!--&lt;!&ndash;springboot 主版本引用&ndash;&gt;-->
+            <!--<dependency>-->
+                <!--<groupId>org.springframework.boot</groupId>-->
+                <!--<artifactId>spring-boot-starter-parent</artifactId>-->
+                <!--<version>2.0.0.RELEASE</version>-->
+                <!--<type>pom</type>-->
+                <!--<scope>import</scope>-->
+            <!--</dependency>-->
+            <!--spring cloud 版本引用-->
             <dependency>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-starter-parent</artifactId>
-                <version>2.0.0.RELEASE</version>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-dependencies</artifactId>
+                <version>Edgware.SR2</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
@@ -67,7 +92,7 @@
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-devtools</artifactId>
                 <optional>true</optional>
-                <scope>provided</scope>
+                <!--<scope>provided</scope>-->
                 <version>${springboot.version}</version>
             </dependency>
 
@@ -135,18 +160,35 @@
                 </plugin>
 
                 <plugin>
-                    <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-compiler-plugin</artifactId>
-                    <!--<version>3.3</version>-->
                     <configuration>
                         <source>${java.version}</source>
                         <target>${java.version}</target>
                     </configuration>
                 </plugin>
+
+                <!--<plugin>-->
+                    <!--<groupId>org.apache.maven.plugins</groupId>-->
+                    <!--<artifactId>maven-compiler-plugin</artifactId>-->
+                    <!--<configuration>-->
+                        <!--<source>${java.version}</source>-->
+                        <!--<target>${java.version}</target>-->
+                    <!--</configuration>-->
+                <!--</plugin>-->
             </plugins>
         </pluginManagement>
-
     </build>
+
+    <!--<repositories>-->
+        <!--<repository>-->
+            <!--<id>spring-milestones</id>-->
+            <!--<name>Spring Milestones</name>-->
+            <!--<url>https://repo.spring.io/libs-milestone</url>-->
+            <!--<snapshots>-->
+                <!--<enabled>false</enabled>-->
+            <!--</snapshots>-->
+        <!--</repository>-->
+    <!--</repositories>-->
 
 
 </project>
