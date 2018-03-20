@@ -14,7 +14,7 @@
     <dependencies>
         <dependency>
             <groupId>cn.example</groupId>
-            <artifactId>life-service</artifactId>
+            <artifactId>life-api</artifactId>
         </dependency>
 
         <dependency>
@@ -27,10 +27,12 @@
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
 
+        <!--这个注解是必须要配置的，否则会报错-->
         <dependency>
             <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-eureka</artifactId>
+            <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
         </dependency>
+
     </dependencies>
 
     <build>

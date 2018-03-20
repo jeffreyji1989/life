@@ -8,11 +8,11 @@
     <version>0.0.1-SNAPSHOT</version>
     <modules>
         <module>sharding-jdbc</module>
-        <module>demo</module>
+        <module>life-demo</module>
         <module>life-core</module>
         <module>life-common</module>
         <module>eureka-server</module>
-        <module>life-service</module>
+        <module>life-api</module>
         <module>life-service-impl</module>
         <module>life-app</module>
     </modules>
@@ -28,6 +28,7 @@
 
         <springboot.version>1.5.9.RELEASE</springboot.version>
         <spring.platform.version>Brussels-SR7</spring.platform.version>
+        <spring.cloud.version>Edgware.SR2</spring.cloud.version>
         <druid.version>1.1.9</druid.version>
     </properties>
 
@@ -57,7 +58,7 @@
 
             <dependency>
                 <groupId>cn.example</groupId>
-                <artifactId>life-service</artifactId>
+                <artifactId>life-api</artifactId>
                 <version>${project.version}</version>
             </dependency>
 
@@ -65,24 +66,16 @@
             <dependency>
                 <groupId>io.spring.platform</groupId>
                 <artifactId>platform-bom</artifactId>
-                <version>Brussels-SR7</version>
+                <version>${spring.platform.version}</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
-
-            <!--&lt;!&ndash;springboot 主版本引用&ndash;&gt;-->
-            <!--<dependency>-->
-                <!--<groupId>org.springframework.boot</groupId>-->
-                <!--<artifactId>spring-boot-starter-parent</artifactId>-->
-                <!--<version>2.0.0.RELEASE</version>-->
-                <!--<type>pom</type>-->
-                <!--<scope>import</scope>-->
-            <!--</dependency>-->
+            
             <!--spring cloud 版本引用-->
             <dependency>
                 <groupId>org.springframework.cloud</groupId>
                 <artifactId>spring-cloud-dependencies</artifactId>
-                <version>Edgware.SR2</version>
+                <version>${spring.cloud.version}</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
@@ -92,7 +85,6 @@
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-devtools</artifactId>
                 <optional>true</optional>
-                <!--<scope>provided</scope>-->
                 <version>${springboot.version}</version>
             </dependency>
 

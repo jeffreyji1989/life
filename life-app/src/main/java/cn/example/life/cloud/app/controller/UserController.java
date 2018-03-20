@@ -1,10 +1,9 @@
 package cn.example.life.cloud.app.controller;
 
-import cn.example.life.cloud.service.UserService;
+import cn.example.life.api.user.UserService;
 import cn.example.life.common.module.User;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
@@ -23,10 +22,10 @@ public class UserController {
     @Autowired
     private UserService userService;
 
-    @RequestMapping(value = "users", method = RequestMethod.GET)
+    @RequestMapping(value = "showAllUser", method = RequestMethod.GET)
     public List<User> showAllUser() {
         log.info("执行页面请求");
-        List<User> users = userService.queryAll();
+        List<User> users = userService.findAll();
         return users;
     }
 }
