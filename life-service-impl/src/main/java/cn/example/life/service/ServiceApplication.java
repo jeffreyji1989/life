@@ -1,4 +1,4 @@
-package cn.example.life.service.user;
+package cn.example.life.service;
 
 import cn.example.life.core.utils.IdUtil;
 import org.springframework.boot.SpringApplication;

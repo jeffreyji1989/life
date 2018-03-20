@@ -2,6 +2,8 @@ package cn.example.life.service.user.web.controller;
 
 import cn.example.life.api.user.UserService;
 import cn.example.life.common.module.User;
+import io.swagger.annotations.ApiImplicitParam;
+import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.web.bind.annotation.RestController;
@@ -15,16 +17,41 @@ import java.util.List;
 public class UserServiceController implements UserService {
 
     @Autowired
-    @Qualifier("userServiceImpl")// 这两个注解必须都写才有效，不写@Autowired的值位null
+    @Qualifier("userServiceImpl")// 这两个注解必须都写才有效，不写@Autowired的值为null
     private UserService userService;
 
     @Override
+    @ApiOperation(value = "添加用户信息")
+    @ApiImplicitParam(name = "name", value = "用户详细实体user", required = true, dataType = "User")
+    public User add(User user) {
+        return userService.add(user);
+    }
+
+    @Override
+    @ApiOperation(value = "更新用户信息")
+    @ApiImplicitParam(name = "user", value = "用户详细实体user", required = true, dataType = "User")
+    public User update(User user) {
+        return userService.update(user);
+    }
+
+    @Override
+    @ApiOperation(value = "删除用户信息")
+    @ApiImplicitParam(name = "id", value = "用户ID值", required = true, dataType = "Long")
+    public void delete(long id) {
+        userService.delete(id);
+    }
+
+    @Override
+    @ApiOperation(value = "查找某个用户")
+    @ApiImplicitParam(name = "id", value = "用户ID值", required = true, dataType = "Long")
+    public User findOne(Long id) {
+        return userService.findOne(id);
+    }
+
+    @Override
+    @ApiOperation(value = "查询全部用户")
     public List<User> findAll() {
         return userService.findAll();
     }
 
-    @Override
-    public User findOneUser(Long id) {
-        return userService.findOneUser(id);
-    }
 }
