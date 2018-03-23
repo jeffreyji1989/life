@@ -9,5 +9,3 @@ eureka:
   client:
     service-url:
       default-zone: http://${eureka.instance.hostname}:8761/eureka/
-
-

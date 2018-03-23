@@ -11,6 +11,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ConcurrentMap;
+import java.util.concurrent.TimeUnit;
 
 /**
  * Created by 季先生 on 2018/3/19 13:49.
@@ -64,6 +65,7 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public List<User> findAll() {
+       System.out.println(100/0);
         log.info("开始执行用户服务...");
         List<User> result = new ArrayList<>();
         for (int i = 0; i < 20; i++) {
