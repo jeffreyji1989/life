@@ -15,6 +15,8 @@
         <module>life-api</module>
         <module>life-service-impl</module>
         <module>life-app</module>
+        <module>sb-mq</module>
+        <module>life-design-pattern</module>
     </modules>
     <packaging>pom</packaging>
 

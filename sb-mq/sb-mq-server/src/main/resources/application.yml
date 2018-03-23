@@ -1,0 +1,9 @@
+spring:
+  application:
+    name: mq-server
+  kafka:
+    bootstrap-servers: 10.1.1.156:9092
+    consumer:
+        group-id: testGroup
+server:
+  port: 2223
