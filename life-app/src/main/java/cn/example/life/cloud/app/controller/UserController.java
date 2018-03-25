@@ -1,9 +1,8 @@
 package cn.example.life.cloud.app.controller;
 
-import cn.example.life.api.user.UserService;
 import cn.example.life.common.module.User;
+import cn.example.life.service.api.user.UserService;
 import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
-import com.sun.org.apache.regexp.internal.RE;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;

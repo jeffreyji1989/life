@@ -1,7 +1,7 @@
 package cn.example.life.service.user.controller;
 
-import cn.example.life.api.user.UserService;
 import cn.example.life.common.module.User;
+import cn.example.life.service.api.user.UserService;
 import io.swagger.annotations.ApiImplicitParam;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;

@@ -1,8 +1,8 @@
 package cn.example.life.service.user.impl;
 
-import cn.example.life.api.user.UserService;
 import cn.example.life.common.module.User;
 import cn.example.life.core.utils.IdUtil;
+import cn.example.life.service.api.user.UserService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

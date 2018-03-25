@@ -12,7 +12,7 @@ import org.springframework.cloud.netflix.hystrix.dashboard.EnableHystrixDashboar
          */
 @SpringBootApplication
 //用feign的时候，只需要在调用曾 加上该注解，并且指定服务接口提供的包
-@EnableFeignClients(basePackages = {"cn.example.life.api"})
+@EnableFeignClients(basePackages = {"cn.example.life.service.api"})
 
 @EnableCircuitBreaker
 public class AppApplicaation {

@@ -59,7 +59,7 @@
 
             <dependency>
                 <groupId>cn.example</groupId>
-                <artifactId>life-api</artifactId>
+                <artifactId>life-service-api</artifactId>
                 <version>${project.version}</version>
             </dependency>
 
