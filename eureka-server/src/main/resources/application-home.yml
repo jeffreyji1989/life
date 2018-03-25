@@ -1,0 +1,15 @@
+spring:
+  application:
+    name: eureka-server
+
+server:
+  port: 8761
+eureka:
+  instance:
+    hostname: 192.168.0.102
+    prefer-ip-address: true
+  client:
+    register-with-eureka: false   #禁止客户端注册行为
+    fetch-registry: false
+    service-url:
+      default-zone: http://${eureka.instance.hostname}:${server.port}/eureka/

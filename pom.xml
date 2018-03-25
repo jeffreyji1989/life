@@ -12,11 +12,9 @@
         <module>life-core</module>
         <module>life-common</module>
         <module>eureka-server</module>
-        <module>life-api</module>
-        <module>life-service-impl</module>
+        <module>life-service</module>
         <module>life-app</module>
         <module>sb-mq</module>
-        <module>life-design-pattern</module>
     </modules>
     <packaging>pom</packaging>
 
