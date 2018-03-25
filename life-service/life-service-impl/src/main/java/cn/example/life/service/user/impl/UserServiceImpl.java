@@ -64,7 +64,6 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public List<User> findAll() {
-       System.out.println(100/0);
         log.info("开始执行用户服务...");
         List<User> result = new ArrayList<>();
         for (int i = 0; i < 20; i++) {

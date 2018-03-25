@@ -1,6 +1,5 @@
 package cn.example.life.demo.controller;
 
-import cn.example.life.demo.annotation.RequestLimit;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
@@ -43,7 +42,7 @@ public class IndexController {
         return environment.getProperty("aa") + environment.getProperty("bb");
     }
 
-    @RequestLimit(count = 10, time = 5000)
+//    @RequestLimit(count = 10, time = 5000)
     @RequestMapping("/urltest")
     @ResponseBody
     public String test(HttpServletRequest request, ModelMap modelMap) {

@@ -26,7 +26,6 @@ public class UserController {
     @RequestMapping(value = "showAllUser", method = RequestMethod.GET)
     @HystrixCommand(fallbackMethod = "showAllUserError")
     public List<User> showAllUser() {
-//        System.out.println(100/0);
         log.info("执行页面请求");
         List<User> users = userService.findAll();
         return users;

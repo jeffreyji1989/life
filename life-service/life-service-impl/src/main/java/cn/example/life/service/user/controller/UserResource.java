@@ -1,6 +1,7 @@
 package cn.example.life.service.user.controller;
 
 import cn.example.life.common.module.User;
+import cn.example.life.service.aop.limit.RequestLimit;
 import cn.example.life.service.api.user.UserService;
 import io.swagger.annotations.ApiImplicitParam;
 import io.swagger.annotations.ApiOperation;
@@ -50,6 +51,7 @@ public class UserResource implements UserService {
 
     @Override
     @ApiOperation(value = "查询全部用户")
+    @RequestLimit(count = 10L)
     public List<User> findAll() {
         return userService.findAll();
     }
