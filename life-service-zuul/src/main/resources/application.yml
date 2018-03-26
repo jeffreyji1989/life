@@ -15,7 +15,7 @@ zuul:
       path: /api/user/**
       serviceId: user-service
     api-role:
-      path: /api/role/**
-      serviceId: role-service
+      path: /api/book/**
+      serviceId: book-service
 
 

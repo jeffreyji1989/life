@@ -15,7 +15,7 @@ import java.util.concurrent.ConcurrentMap;
 /**
  * Created by 季先生 on 2018/3/19 13:49.
  */
-@Service("userServiceImpl")
+@Service
 @Slf4j
 public class UserServiceImpl implements UserService {
 

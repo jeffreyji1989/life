@@ -13,6 +13,7 @@
     <packaging>pom</packaging>
     <modules>
         <module>user-service-api</module>
+        <module>book-service-api</module>
     </modules>
     
 

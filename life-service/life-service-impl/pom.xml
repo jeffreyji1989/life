@@ -13,6 +13,7 @@
     <packaging>pom</packaging>
     <modules>
         <module>user-service-impl</module>
+        <module>book-service-impl</module>
     </modules>
 
 </project>

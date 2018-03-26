@@ -64,6 +64,12 @@
                 <version>${project.version}</version>
             </dependency>
 
+            <dependency>
+                <groupId>cn.example</groupId>
+                <artifactId>book-service-api</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+
             <!--spring统一版本控制-->
             <dependency>
                 <groupId>io.spring.platform</groupId>

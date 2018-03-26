@@ -18,7 +18,7 @@ import java.util.List;
 public class UserResource implements UserService {
 
     @Autowired
-    @Qualifier("userServiceImpl")// 这两个注解必须都写才有效，不写@Autowired的值为null
+//    @Qualifier("userServiceImpl")// 这两个注解必须都写才有效，不写@Autowired的值为null
     private UserService userService;
 
     @Override
