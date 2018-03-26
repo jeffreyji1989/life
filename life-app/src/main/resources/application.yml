@@ -10,5 +10,5 @@ server:
 
 user:
   service:
-    name: life-service
+    name: user-service
 

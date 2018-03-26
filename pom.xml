@@ -15,6 +15,7 @@
         <module>life-service</module>
         <module>life-app</module>
         <module>sb-mq</module>
+        <module>life-service-zuul</module>
     </modules>
     <packaging>pom</packaging>
 
@@ -59,7 +60,7 @@
 
             <dependency>
                 <groupId>cn.example</groupId>
-                <artifactId>life-service-api</artifactId>
+                <artifactId>user-service-api</artifactId>
                 <version>${project.version}</version>
             </dependency>
 

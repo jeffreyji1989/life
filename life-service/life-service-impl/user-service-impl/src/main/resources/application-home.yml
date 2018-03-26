@@ -1,0 +1,11 @@
+spring:
+  application:
+    name: user-service
+server:
+  port: 8001
+eureka:
+  instance:
+    hostname: 192.168.0.102
+  client:
+    service-url:
+      default-zone: http://${eureka.instance.hostname}:8761/eureka/

@@ -1,0 +1,21 @@
+spring:
+  application:
+    name: zuul-service
+server:
+  port: 1000
+eureka:
+  instance:
+    hostname: 127.0.0.1
+  client:
+    service-url:
+      default-zone: http://${eureka.instance.hostname}:8761/eureka/
+zuul:
+  routes:
+    api-user:
+      path: /api/user/**
+      serviceId: user-service
+    api-role:
+      path: /api/role/**
+      serviceId: role-service
+
+
